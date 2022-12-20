@@ -1,7 +1,9 @@
-import "./css/style.css";
-import { refreshBtn, inputForm, formName, formScore, warningText } from "./modules/variableList";
-import {renderDisplay, addScore, displayList} from "./modules/addScores";
-import {refreshPage} from "./modules/refreshFunction";
+import './css/style.css';
+import {
+  refreshBtn, inputForm, formName, formScore, warningText,
+} from './modules/variableList.js';
+import { renderDisplay, addScore, displayList } from './modules/addScores.js';
+import refreshPage from './modules/refreshFunction.js';
 
 window.addEventListener('load', () => {
   displayList();
@@ -10,7 +12,7 @@ window.addEventListener('load', () => {
 inputForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  if (formName.value == '' || formScore.value == '') {
+  if (formName.value === '' || formScore.value === '') {
     warningText.classList.remove('warning-display');
     setTimeout(() => {
       warningText.classList.add('warning-display');
@@ -19,8 +21,8 @@ inputForm.addEventListener('submit', (e) => {
   }
   addScore(formName.value, formScore.value);
   renderDisplay();
-})
+});
 
 refreshBtn.addEventListener('click', () => {
   refreshPage();
-})
+});

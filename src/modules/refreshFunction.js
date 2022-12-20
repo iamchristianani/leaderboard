@@ -1,3 +1,5 @@
-export const refreshPage = () => {
+const refreshPage = () => {
   window.location.reload();
-}
+};
+
+export default refreshPage;

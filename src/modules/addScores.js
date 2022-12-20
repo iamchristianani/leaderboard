@@ -1,4 +1,4 @@
-import { formName, formScore, scoreBox } from "./variableList";
+import { formName, formScore, scoreBox } from './variableList.js';
 
 let scoreArr = [];
 
@@ -8,7 +8,7 @@ const saveToDir = (arr) => {
   localStorage.setItem('scores', jsonData);
 };
 
-//Display all scores
+// Display all scores
 const renderDisplay = () => {
   scoreBox.innerHTML = '';
   scoreArr.forEach((score, index) => {
@@ -19,10 +19,10 @@ const renderDisplay = () => {
     ${score.name}: ${score.value}
     `;
     scoreBox.appendChild(oneScore);
-  })
+  });
 };
 
-//Push scores to the array and save to local directory
+// Push scores to the array and save to local directory
 const addScore = (name, value) => {
   const eachScore = {};
   eachScore.id = scoreArr.length + 1;
@@ -32,7 +32,7 @@ const addScore = (name, value) => {
   formName.value = '';
   formScore.value = '';
   saveToDir(scoreArr);
-}
+};
 
 // Extract From Local Directory and Display
 const displayList = () => {
@@ -43,6 +43,4 @@ const displayList = () => {
   renderDisplay();
 };
 
-
-
-export {renderDisplay, addScore, displayList};
+export { renderDisplay, addScore, displayList };
