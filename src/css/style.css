@@ -69,3 +69,12 @@ main {
   align-self: flex-end;
   padding: 10px 20px;
 }
+
+.warning-text {
+  color: rgb(189, 74, 74);
+  font-style: italic;
+}
+
+.warning-display {
+  display: none;
+}
