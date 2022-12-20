@@ -1,4 +1,4 @@
-import { refreshBtn, formBtn, formName, formScore, scoreBox } from "./variableList";
+import { formName, formScore, scoreBox } from "./variableList";
 
 let scoreArr = [];
 

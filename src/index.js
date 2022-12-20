@@ -1,9 +1,7 @@
 import "./css/style.css";
-import { refreshBtn, inputForm, formBtn, formName, formScore, scoreBox, warningText } from "./modules/variableList";
+import { refreshBtn, inputForm, formName, formScore, warningText } from "./modules/variableList";
 import {renderDisplay, addScore, displayList} from "./modules/addScores";
 import {refreshPage} from "./modules/refreshFunction";
-
-renderDisplay();
 
 window.addEventListener('load', () => {
   displayList();
