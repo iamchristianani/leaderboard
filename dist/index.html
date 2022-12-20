@@ -12,25 +12,18 @@
   <main>
     <div class="view-scores">
       <div class="recent-scores">
-        <p class="recent-score-text">Recent Scores</p>
-        <button>Refresh</button>
+        <h2 class="recent-score-text">Recent Scores</h2>
+        <button class="refresh-btn">Refresh</button>
       </div>
-      <ul class="score-box">
-        <li>Name: 100</li>
-        <li>Name: 20</li>
-        <li>Name: 50</li>
-        <li>Name: 78</li>
-        <li>Name: 125</li>
-        <li>Name: 77</li>
-        <li>Name: 42</li>
-      </ul>
+      <ul class="score-box"></ul>
     </div>
     <div class="add-scores">
-      <p class="add-score-text">Add Score</p>
-      <form action="">
-        <input type="text" name="name" id="name-input" placeholder="Your name">
-        <input type="number" name="score" id="score-input" placeholder="Your score">
-        <input type="button" value="Submit">
+      <h2 class="add-score-text">Add Score</h2>
+      <p class="warning-text warning-display">No field should be left empty!!!</p>
+      <form action="" class="input-form" method="post">
+        <input class="input-text form-name" type="text" name="name" id="name-input form-score" placeholder="Your name">
+        <input class="input-text form-score" type="number" name="score" id="score-input" placeholder="Your score">
+        <input class="form-btn" type="submit" value="Submit">
       </form>
     </div>
   </main>
