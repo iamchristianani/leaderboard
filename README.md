@@ -105,6 +105,8 @@ Clone this repository to your desired folder:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Create a complete website with navigation.]**
+- [ ] **[Give ranking according to the scores.]**
+- [ ] **[Create an About page.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
