@@ -2,7 +2,7 @@ import './css/style.css';
 import {
   refreshBtn, inputForm, formName, formScore, warningText,
 } from './modules/variableList.js';
-import { renderDisplay, addScore,refreshPage } from './modules/addScores.js';
+import { renderDisplay, addScore, refreshPage } from './modules/addScores.js';
 
 window.addEventListener('load', () => {
   renderDisplay();
@@ -27,4 +27,3 @@ inputForm.addEventListener('submit', (e) => {
 refreshBtn.addEventListener('click', () => {
   refreshPage();
 });
-
