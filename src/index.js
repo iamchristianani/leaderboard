@@ -2,11 +2,10 @@ import './css/style.css';
 import {
   refreshBtn, inputForm, formName, formScore, warningText,
 } from './modules/variableList.js';
-import { renderDisplay, addScore, displayList } from './modules/addScores.js';
-import refreshPage from './modules/refreshFunction.js';
+import { renderDisplay, addScore,refreshPage } from './modules/addScores.js';
 
 window.addEventListener('load', () => {
-  displayList();
+  renderDisplay();
 });
 
 inputForm.addEventListener('submit', (e) => {
@@ -20,9 +19,12 @@ inputForm.addEventListener('submit', (e) => {
     return;
   }
   addScore(formName.value, formScore.value);
+  formName.value = '';
+  formScore.value = '';
   renderDisplay();
 });
 
 refreshBtn.addEventListener('click', () => {
   refreshPage();
 });
+
