@@ -1,12 +1,8 @@
-import { formName, formScore, scoreBox } from './variableList.js';
+import showScore from './scoreDisplay.js';
+import uploadScore from './scoreUploader.js';
+import { scoreBox } from './variableList.js';
 
 let scoreArr = [];
-
-// Save To Local Directory
-const saveToDir = (arr) => {
-  const jsonData = JSON.stringify(arr);
-  localStorage.setItem('scores', jsonData);
-};
 
 // Display all scores
 const renderDisplay = () => {
@@ -16,31 +12,25 @@ const renderDisplay = () => {
     oneScore.id = index;
     oneScore.className = 'score-info';
     oneScore.innerHTML = `
-    ${score.name}: ${score.value}
+    ${score.user}: ${score.score}
     `;
     scoreBox.appendChild(oneScore);
   });
 };
 
-// Push scores to the array and save to local directory
-const addScore = (name, value) => {
-  const eachScore = {};
-  eachScore.id = scoreArr.length + 1;
-  eachScore.name = name;
-  eachScore.value = value;
-  scoreArr.push(eachScore);
-  formName.value = '';
-  formScore.value = '';
-  saveToDir(scoreArr);
-};
-
-// Extract From Local Directory and Display
-const displayList = () => {
-  const getJsonData = localStorage.getItem('scores');
-  if (getJsonData) {
-    scoreArr = JSON.parse(getJsonData);
-  }
+const refreshPage = async () => {
+  const arr = await showScore();
+  scoreArr = await arr;
   renderDisplay();
 };
 
-export { renderDisplay, addScore, displayList };
+const addScore = async (name, value) => {
+  const eachScore = {};
+  eachScore.id = scoreArr.length + 1;
+  eachScore.user = name;
+  eachScore.score = value;
+  scoreArr.push(eachScore);
+  uploadScore(eachScore);
+};
+
+export { renderDisplay, addScore, refreshPage };
