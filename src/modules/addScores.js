@@ -1,20 +1,36 @@
 import showScore from './scoreDisplay.js';
 import uploadScore from './scoreUploader.js';
-import { scoreBox } from './variableList.js';
+import { scoreTable} from './variableList.js';
 
 let scoreArr = [];
 
 // Display all scores
 const renderDisplay = () => {
-  scoreBox.innerHTML = '';
+  scoreTable.innerHTML = `
+    <tr>
+      <th>Player</th>
+      <th>Score</th>
+    </tr>
+  `;
+  if (scoreArr.length === 0) {
+    const noScore = document.createElement('tr');
+    noScore.innerHTML =  `
+      <td class="empty-table" colspan="2">
+        <i class="fa-regular fa-face-smile face-icon"></i>
+        <p class="empty-text">Add a new score or click the refresh button!</p>
+      </td>
+    `;
+    scoreTable.appendChild(noScore);
+  }
   scoreArr.forEach((score, index) => {
-    const oneScore = document.createElement('li');
+    const oneScore = document.createElement('tr');
     oneScore.id = index;
     oneScore.className = 'score-info';
     oneScore.innerHTML = `
-    ${score.user}: ${score.score}
+      <td>${score.user}</td>
+      <td>${score.score}</td> 
     `;
-    scoreBox.appendChild(oneScore);
+    scoreTable.appendChild(oneScore)
   });
 };
 
