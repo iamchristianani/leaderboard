@@ -8,7 +8,6 @@ body {
 
 header {
   padding: 30px;
-  font-size: normal;
   text-align: center;
 }
 
@@ -36,17 +35,18 @@ main {
 
 .refresh-btn {
   padding: 10px 20px;
-  box-shadow: 2px 2px #000000;
+  box-shadow: 2px 2px #000;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  border: 2px solid #000000;
+  border: 2px solid #000;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+td,
+th {
+  border: 1px solid #ddd;
   text-align: left;
   padding: 10px;
 }
@@ -86,14 +86,14 @@ tr:nth-child(even) {
 
 .input-text {
   height: 45px;
-  border: 2px solid #000000;
+  border: 2px solid #000;
 }
 
 .form-btn {
   display: flex;
   align-self: flex-end;
   padding: 10px 20px;
-  box-shadow: 2px 2px #000000;
+  box-shadow: 2px 2px #000;
 }
 
 .warning-text {

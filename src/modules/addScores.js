@@ -1,6 +1,6 @@
 import showScore from './scoreDisplay.js';
 import uploadScore from './scoreUploader.js';
-import { scoreTable} from './variableList.js';
+import { scoreTable } from './variableList.js';
 
 let scoreArr = [];
 
@@ -14,7 +14,7 @@ const renderDisplay = () => {
   `;
   if (scoreArr.length === 0) {
     const noScore = document.createElement('tr');
-    noScore.innerHTML =  `
+    noScore.innerHTML = `
       <td class="empty-table" colspan="2">
         <i class="fa-regular fa-face-smile face-icon"></i>
         <p class="empty-text">Add a new score or click the refresh button!</p>
@@ -30,7 +30,7 @@ const renderDisplay = () => {
       <td>${score.user}</td>
       <td>${score.score}</td> 
     `;
-    scoreTable.appendChild(oneScore)
+    scoreTable.appendChild(oneScore);
   });
 };
 
